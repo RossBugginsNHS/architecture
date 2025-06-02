@@ -1,7 +1,7 @@
 <h2>SAF Requirements</h2>
 
 {% for saf_dimension in site.saf_dimensions  %}
-<h3>{{saf_dimension.title}}</h3>
+<h3>  <a href="{{ saf_dimension.url | relative_url }}">{{saf_dimension.title}}</a></h3>
 
 
 <table>
