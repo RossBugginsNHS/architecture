@@ -1,11 +1,7 @@
 @use './nhs-use' as *;
 @use './nhs-colours'as *;
 
-.nhsuk-image__img {
-  max-width: 400px;
-   border-radius: 25px;
 
-}
 .nhsnotify-pane {
   display: -webkit-box;
   display: -ms-flexbox; // sass-lint:disable-line no-duplicate-properties

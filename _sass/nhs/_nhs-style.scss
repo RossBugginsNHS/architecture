@@ -2,6 +2,31 @@
 @use './nhs-colours' as *;
 @use './nhs-use' as *;
 
+
+
+#how-it-works .nhsuk-image__img {
+  max-width: 300px;
+   border-radius: 25px;
+   margin-left: 100px;
+    @include nhsuk-media-query($until: tablet){
+    margin-left: 75px;
+  }
+
+}
+#how-it-works .nhsuk-grid-column-one-half {
+  min-height: 400px;
+ @include nhsuk-media-query($until: tablet){
+    min-height: unset;
+  }
+}
+
+
+.nhsuk-image__img {
+  max-width: 400px;
+   border-radius: 25px;
+
+}
+
 .nhsuk-header__service-name {
   @include nhsuk-media-query($until: desktop){
     max-width: unset;    

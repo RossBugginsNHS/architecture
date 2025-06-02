@@ -1,0 +1,31 @@
+- heading: Read the NHS England Solution Architecture Framework guidance
+  description: |
+    The NHSE SAF is a framework for solution architecture in NHS England. It provides:
+      - guidance 
+      - best practices 
+
+    Helping architects design and implement solutions that meet the needs of the NHS.
+
+  image: 01.png
+  image_alt: ""
+
+- heading: Review current architecture
+  description: |
+    Review your current architecture to identify areas for improvement and ensure alignment with NHS standards.
+
+  image: 02.png
+  image_alt: ""
+
+- heading: Score your architecture
+  description: |
+    Use the SAF to score your architecture against NHS standards and identify areas for improvement.
+  
+  image: 03.png
+  image_alt: ""
+
+- heading: Improve and iterate your architecture
+  description: |
+    Use the feedback from the SAF to improve and iterate your architecture, ensuring it meets the needs of the NHS and its stakeholders.
+ 
+  image: 04.png
+  image_alt: ""
