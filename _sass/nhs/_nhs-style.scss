@@ -5,7 +5,6 @@
 .nhsuk-header__service-name {
   @include nhsuk-media-query($until: desktop){
     max-width: unset;    
-    //display: unset;
   }
 }
 
