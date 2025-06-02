@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup npm
         uses: actions/setup-node@v4
-      - run: npm install        
+      - run: npm run build    
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
