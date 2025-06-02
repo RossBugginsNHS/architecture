@@ -1,0 +1,21 @@
+<h2>SAFs</h2>
+
+<table>
+{% for saf in site.safs %}
+{% if saf.dimension != include.saf_dimension_name %}
+{% continue %}
+{% endif %}
+
+<tr>
+  <td>
+    <a href="{{ saf.url | relative_url }}">
+      {{ saf.title }}
+    </a>
+  </td>
+  <td>
+    {{saf.content | markdownify | remove: '<p>' | remove: '</p>' }}
+  </td>
+</tr>
+
+{% endfor %}
+</table>

@@ -55,7 +55,7 @@ defaults:
       path: "" # an empty string here means all files in the project
       type: "saf_dimensions" # previously `post` in Jekyll 2.2.
     values:
-      layout: "home"            
+      layout: "saf_dimensions"            
   -
     scope:
       path: "guidance" # an empty string here means all files in the project

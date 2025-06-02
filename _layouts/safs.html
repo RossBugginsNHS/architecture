@@ -1,6 +1,11 @@
 ---
 layout: home
 ---
+{%- assign saf_dimension = site.saf_dimensions | find:"name", page.dimension -%} 
 
-<h1>{{ page.title }}</h1>
+
+<h1>{{ page.title }}: {{ saf_dimension.title }}</h1>
+
+
 {{ content }}
+
