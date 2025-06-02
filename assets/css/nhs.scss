@@ -2,5 +2,6 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import
-  "nhs/nhs";
+
+@use 'nhs/nhs-use' as *;
+@use "nhs/nhs" as *;

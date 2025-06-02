@@ -1,9 +1,7 @@
 
-@use './nhs-use' as *;
 @use './nhs-colours' as *;
-@use './nhsnotify-side-nav' as *;
-
-
+@use './nhs-style' as *;
+@use './nhs-use' as *;
 
 .nhsnotify-image {
   width: unset;
