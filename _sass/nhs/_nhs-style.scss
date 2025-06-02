@@ -6,16 +6,17 @@
 
 #how-it-works .nhsuk-image__img {
   max-width: 300px;
-   border-radius: 25px;
-   margin-left: 100px;
-    @include nhsuk-media-query($until: tablet){
+  border-radius: 25px;
+  margin-left: 100px;
+  @include nhsuk-media-query($until: tablet){
     margin-left: 75px;
+    max-width: 200px;
   }
 
 }
 #how-it-works .nhsuk-grid-column-one-half {
   min-height: 400px;
- @include nhsuk-media-query($until: tablet){
+  @include nhsuk-media-query($until: tablet){
     min-height: unset;
   }
 }
