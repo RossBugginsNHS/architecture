@@ -1,5 +1,7 @@
 ---
 layout: home
+nav_order: 0.1
+
 ---
 
 <div id="heading" class="nhsnotify-banner--blue">
@@ -25,6 +27,7 @@ layout: home
 {% include saf.html %}
 
 {% include saf_dimensions.html %}
+ {%- include prev_next/prev_next.md -%}
   </div>
 </div>
 
