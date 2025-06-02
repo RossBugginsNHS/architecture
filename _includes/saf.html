@@ -1,0 +1,25 @@
+<h2>SAF Requirements</h2>
+
+{% for saf_dimension in site.saf_dimensions  %}
+<h3>{{saf_dimension.title}}</h3>
+
+
+<table>
+{% for saf in site.safs  %}
+{% if saf.dimension != saf_dimension.name %}
+{% continue %}
+{% endif %}
+<tr>
+  <td>
+    <a href="{{ saf.url }}">
+      {{ saf.title }}
+    </a>
+  </td>
+  <td>
+    {{saf.content | markdownify | remove: '<p>' | remove: '</p>' }}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endfor %}

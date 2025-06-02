@@ -1,0 +1,10 @@
+{
+    "name": "Jekyll Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/jekyll:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "forwardPorts": [4000],
+    "postCreateCommand": "bash -i scripts/install-dependencies.sh",
+    "remoteUser": "vscode"
+}

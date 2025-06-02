@@ -1,0 +1,21 @@
+<h2>SAF Dimensions</h2>
+
+<table>
+{% for saf_dimension in site.saf_dimensions %}
+<tr>
+  <td>
+     <a href="{{ saf.url }}">
+      {{ saf_dimension.code }}
+    </a>   
+  </td>
+  <td>
+    <a href="{{ saf.url }}">
+      {{ saf_dimension.title }}
+    </a>
+  </td>
+  <td>
+    {{ saf_dimension.description }} 
+  </td>
+</tr>
+{% endfor %}
+</table>

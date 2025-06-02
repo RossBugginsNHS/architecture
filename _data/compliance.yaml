@@ -1,0 +1,18 @@
+- score: 0
+  criteria: No evidence that the requirement is supported and as such presents significant service risk.
+  colour: red
+- score: 1
+  criteria: Limited evidence that the requirement is supported with high risks gaps.
+  colour: red
+- score: 2
+  criteria: Some elements of the requirement are met with an acceptable level of evidence but significant number of notable gaps.
+  colour: orange
+- score: 3
+  criteria: Much of the requirement is met with an acceptable level of evidence but there are notable gaps which present risk which require mitigating action.
+  colour: orange
+- score: 4
+  criteria: Most of the requirement is met with good levels of evidence but there are some gaps but are not thought to present significant risk.
+  colour: green
+- score: 5
+  criteria: Comprehensive evidence that the requirements is met and exceeds expectations in several areas. We would consider this an exemplar.
+  colour: green

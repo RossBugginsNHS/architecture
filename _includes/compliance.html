@@ -1,0 +1,10 @@
+<h2>SAF Requirements</h2>
+
+<table>
+{% for score in site.data.compliance %}
+<tr>
+  <td style="background-color: {{ score.colour }};">{{ score.score }}</td>
+  <td style="background-color: {{ score.colour }};">{{ score.criteria }}</td>
+</tr>
+{% endfor %}
+</table>
