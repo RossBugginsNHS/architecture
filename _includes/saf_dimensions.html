@@ -4,12 +4,12 @@
 {% for saf_dimension in site.saf_dimensions %}
 <tr>
   <td>
-     <a href="{{ saf.url }}">
+     <a href="{{ saf.url | relative_url  }}">
       {{ saf_dimension.code }}
     </a>   
   </td>
   <td>
-    <a href="{{ saf.url }}">
+    <a href="{{ saf.url | relative_url  }}">
       {{ saf_dimension.title }}
     </a>
   </td>
