@@ -1,7 +1,19 @@
 
 @use './nhs-colours' as *;
-@use './nhs-style' as *;
 @use './nhs-use' as *;
+
+.nhsuk-header__service-name {
+  @include nhsuk-media-query($until: desktop){
+    max-width: unset;    
+    display: unset;
+  }
+}
+
+.nhsuk-header__logo {
+ @include nhsuk-media-query($until: desktop){
+    max-width: 100%;
+  }
+}
 
 .nhsnotify-image {
   width: unset;
