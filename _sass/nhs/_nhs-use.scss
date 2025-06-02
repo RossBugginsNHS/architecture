@@ -1,7 +1,7 @@
 
 
 @forward '../../node_modules/nhsuk-frontend/packages' with (
-  $nhsuk-show-breakpoints: true,
+  $nhsuk-show-breakpoints: false,
   $nhsuk-breakpoints: (
     mobile: 320px,
     tablet: 641px,
