@@ -2,22 +2,7 @@
 layout: default
 ---
 
-{% assign current_dir = page.dir %}
-{% assign paths = page.dir | split: "/" %}
-{% assign parent_dir = paths[1] %}
 
-{%-
-assign nav_pages = site.pages
-| where_exp: "item", "item.dir contains parent_dir"
--%}
-
-{% assign first_level_dir = parent_dir | prepend: '/' | append: '/' %}
-{%-
-assign first_level = nav_pages
-| where_exp: "item", "item.dir == first_level_dir"
-| group_by: "section"
-| sort: 'name', 'last'
--%}
 <div class="nhsuk-width-container">
   {%- include breadcrumb.html -%}
   <main class="nhsuk-main-wrapper--s" id="maincontent" role="main">
@@ -27,35 +12,28 @@ assign first_level = nav_pages
           <div class="nhsnotify-pane__side-bar">
             <nav class="nhsnotify-side-nav">
               <ul class="nhsuk-list nhsnotify-side-nav__list">
-                {% for section in first_level %}
-                {% if section.name != "" %}
-                <li class="nhsuk-u-font-weight-bold nhsnotify-side-nav__list-section">{{ section.name }}</li>
-                {% endif %}
-                {% assign sorted = section.items | sort: 'nav_order' %}
-                {% for post in sorted %}
-                {% unless post.has_children %}
-                <li class="
+                
+              <li class="
                       nhsnotify-side-nav__item
                       {% if post.url == page.url %}
                         nhsnotify-side-nav__item--current
                       {% endif %}
                     ">
-                  <a class="nhsnotify-side-nav__link" href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+                  <a class="nhsnotify-side-nav__link" href="{{ './saf_dimensions' | relative_url }}">SAF Dimensions</a>
                 </li>
-                {% endunless %}
-                 {% endfor %}
+
                  
-                 {% for saf_dimension in site.saf_dimensions %}
+                   {% for saf_dimension in site.saf_dimensions %}
                 <li class="
                       nhsnotify-side-nav__item
-                      {% if post.url == page.url %}
+                      {% if saf_dimension.url == page.url %}
                         nhsnotify-side-nav__item--current
                       {% endif %}
                     ">
                   <a class="nhsnotify-side-nav__link" href="{{ site.baseurl | append: saf_dimension.url }}">{{ saf_dimension.title }}</a>
                 </li>
                 {% endfor %}
-                {% endfor %}    
+           
               </ul>
 
             </nav>
@@ -65,14 +43,17 @@ assign first_level = nav_pages
             <heading class="nhsuk-heading-s" style="margin-bottom: 0; color: #4c6272">{{ page.section }}</heading>
             {% endif %}
  
-      
-            {{ content }}
-            
+             <h1>{{ page.title }}  </h1>
+
+   {{ content }}
+            {%- include saf_dimension.html saf_dimension_name=page.name -%}
+
           </div>
         </div>
       </div>
     </div>
   </main>
 </div>
+
 
 

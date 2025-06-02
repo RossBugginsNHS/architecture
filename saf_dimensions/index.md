@@ -1,5 +1,6 @@
 ---
 title: SAF Dimensions
+layout: saf_dimensions
 nav_order: 3.0
 ---
 

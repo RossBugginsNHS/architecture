@@ -30,10 +30,6 @@ url: "https://nhsdigital.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
-# Build settings
-theme: just-the-docs
-plugins:
-  - jekyll-feed
 
 collections:
   safs:
@@ -49,31 +45,19 @@ defaults:
       path: "" # an empty string here means all files in the project
       type: "safs" # previously `post` in Jekyll 2.2.
     values:
-      layout: "safs"
+      layout: "saf"
   -
     scope:
       path: "" # an empty string here means all files in the project
       type: "saf_dimensions" # previously `post` in Jekyll 2.2.
     values:
-      layout: "saf_dimensions"            
+      layout: "saf_dimension"            
   -
     scope:
       path: "guidance" # an empty string here means all files in the project
       type: "pages" # previously `post` in Jekyll 2.2.
     values:
-      layout: "home"
-  -
-    scope:
-      path: "safs" # an empty string here means all files in the project
-      type: "pages" # previously `post` in Jekyll 2.2.
-    values:
-      layout: "home"
-  -
-    scope:
-      path: "saf_dimensions" # an empty string here means all files in the project
-      type: "pages" # previously `post` in Jekyll 2.2.
-    values:
-      layout: "home"            
+      layout: "page"
 
 just_the_docs:
   collections:
@@ -90,6 +74,10 @@ gh_edit_repository: "https://github.com/nhsdigital/architecture" # the github UR
 gh_edit_branch: "main" # the branch that your docs is served from
 #gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+color_scheme: nhs
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
