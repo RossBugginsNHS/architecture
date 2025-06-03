@@ -20,6 +20,10 @@ title: NHSE Solution Architecture Framework
   </div>
 </div>
 
+ <div class="nhsuk-width-container nhsuk-main-wrapper">
+  {% include construction.html %}
+</div>
+
 <div id="benefits" class="nhsnotify-banner--white">
   <div class="nhsuk-width-container nhsuk-main-wrapper">
     <div class="nhsuk-grid-row">
@@ -47,7 +51,7 @@ title: NHSE Solution Architecture Framework
   <div class="nhsuk-width-container nhsuk-main-wrapper">
 
 <h2><a href="{{'safs/' | relative_url}}"> Framework Requirements</a></h2>
-{% include saf.html %}
+{% include safs.html %}
 
 <h2><a href="{{'saf_dimensions/' | relative_url}}"> Framework Dimensions</a></h2>
 {% include saf_dimensions.html %}

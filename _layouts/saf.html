@@ -44,11 +44,7 @@ layout: default
             {% endif %}
  
             {% assign saf_dimension = site.saf_dimensions | where: "name", page.dimension | first %}
-
-     <h1>{{ page.title }}:  <a href="{{ saf_dimension.url | relative_url  }}">{{ saf_dimension.title }}</a>  </h1>
-
-
-{{ content }}
+            {%- include saf.html -%}
 
           </div>
         </div>
