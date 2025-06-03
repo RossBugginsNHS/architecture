@@ -2,7 +2,15 @@
 <div style="display: flex;">
     {%- include prev_next/set_prev_next.md -%}
     <div style="flex: 1; display: flex; justify-content: flex-start;">
-    {% if prev_url != "" %}
+    
+    {% assign is404 = false %}
+    {% if prev_url contains '404' %}
+      {% assign is404 = true %}
+    {% endif %}
+
+
+
+    {% if prev_url != "" and is404 != true %}
     <a href="{{ prev_url }}" id="previous-page">Previous: {{prev_name}}</a>
     {% endif %}
     </div>

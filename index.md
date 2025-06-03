@@ -1,7 +1,7 @@
 ---
 layout: home
 nav_order: 0.1
-
+title: NHSE Solution Architecture Framework
 ---
 
 <div id="heading" class="nhsnotify-banner--blue">
@@ -52,7 +52,7 @@ nav_order: 0.1
 <h2><a href="{{'saf_dimensions/' | relative_url}}"> Framework Dimensions</a></h2>
 {% include saf_dimensions.html %}
 
-{%- include prev_next/prev_next.md -%}
+
   </div>
 </div>
 
