@@ -19,7 +19,8 @@
 <h3> <a href="{{tag_path | relative_url}}"> {{tag.name}}</a>: {{tag.size}}</h3>
 
 <ul>
-{%- for doc in site_pages -%}
+{%- assign sorted_docs = site_pages | sort: "title" -%}    
+{%- for doc in sorted_docs -%}
 {%- if doc.tags contains tag.name -%}
 <li><a href="{{doc.url | relative_url}}">{{doc.title}}{%- if doc.description -%}: {{doc.description}}{%- endif -%}</a></li>
 {%- endif -%}

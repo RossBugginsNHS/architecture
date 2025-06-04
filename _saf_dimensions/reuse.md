@@ -2,7 +2,7 @@
 name: reuse
 code: RU
 title: Re Use Principles and Development of Shared Services 
-description: Are we building re-useable components, are we reusing what we have already in an effective manner? 
+description: Reusing what we have already
 nav_order: 3.5
 ---
 

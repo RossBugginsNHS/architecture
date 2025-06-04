@@ -51,9 +51,16 @@ module SamplePlugin
         @content = "<div>" + group + ": " + count.to_s + "</div>"
 
         @content += "<div><ul>"
-        site.collections['safs'].docs.each do |saf|
+
+        safs = site.collections['safs'].docs
+        sorted_safs = safs.sort_by {|title| title.data['title'].downcase}
+        sorted_safs.each do |saf|
           if saf.data['tags'].include? group
-            @content += "<li><a href=\"..#{saf.url}\">#{saf.data['title']}</a></li>"
+            title = saf.data['title']
+            if saf.data['description'] != nil
+              title += ": " + saf.data['description']
+            end
+            @content += "<li><a href=\"..#{saf.url}\">#{title}</a></li>"
           end
         end
         @content += "</ul></div>"
