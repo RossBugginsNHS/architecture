@@ -4,6 +4,10 @@
     "nunjucks": "^3.2.4"
   },
   "scripts": {
-    "build": "npm install && cp node_modules/nhsuk-frontend/dist/nhsuk.min.js assets/js/nhsuk.min.js"
+    "build": "npm install && cp node_modules/nhsuk-frontend/dist/nhsuk.min.js assets/js/nhsuk.min.js",
+    "debug": "JEKYLL_ENV=development BUNDLE_GEMFILE=Gemfile bundle exec jekyll serve --limit_posts 100 --trace",
+
+    "app:start": "pm2 start make -- serve",
+    "app:stop": "pm2 kill"
+  }    
   }
-}

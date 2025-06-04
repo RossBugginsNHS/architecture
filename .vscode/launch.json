@@ -1,21 +1,15 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Dummy Launch",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceFolder}/dummy.js",
-            "skipFiles": ["<node_internals>/**"]
-        }
-    ],
-    "compounds": [
-        {
-            "name": "Jekyll Serve Compound",
-            "configurations": ["Dummy Launch"],
-            "preLaunchTask": "Serve Jekyll"
-        }
-    ]
+  "configurations": [
+    {
+      "console": "integratedTerminal",
+      "name": "Debug",
+      "preLaunchTask": "stop-already-running",
+      "request": "launch",
+      "runtimeArgs": ["debug"],
+      "runtimeExecutable": "make",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ],
+  "version": "0.2.0"
 }

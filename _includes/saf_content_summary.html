@@ -1,2 +1,3 @@
 {% assign saf_to_render = include.saf %}
+{%- if saf_to_render.description -%}<b>{{saf_to_render.description}}: </b>{%- endif -%}
 {{saf_to_render.requirement | default: saf_to_render.content  | markdownify | remove: '<p>' | remove: '</p>' }}
