@@ -8,7 +8,7 @@
 {% continue %}
 {% endif %}
 <tr>
-  <td {%- if saf.requirement -%} {%- if saf.requirement contains '**MUST**' %} style="width:5%; background-color: red;" {%- elsif saf.requirement contains '**SHOULD**' %} style="width:5%;background-color: orange;" {%- else %} style="width:5%;background-color: blue;" {%- endif -%}{%- endif -%}>
+  <td {%- if saf.requirement -%} {%- if saf.requirement contains '**MUST**' %} style="width:8%; background-color: red;" {%- elsif saf.requirement contains '**SHOULD**' %} style="width:8%;background-color: orange;" {%- else %} style="width:8%;background-color: blue;" {%- endif -%}{%- endif -%}>
     <a href="{{ saf.url | relative_url }}">
       {{ saf.title }}
     </a>
