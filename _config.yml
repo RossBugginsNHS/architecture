@@ -30,6 +30,11 @@ url: "https://nhsdigital.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
+plugins_dir: _plugins
+#plugins:
+  #- tags
+
+safe: false
 
 collections:
   safs:

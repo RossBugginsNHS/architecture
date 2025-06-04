@@ -2,6 +2,7 @@
 layout: home
 nav_order: 4.9
 title: Contact
+tags: [contact,info,email,sms]
 ---
 
 <div id="heading" class="nhsnotify-banner--blue">

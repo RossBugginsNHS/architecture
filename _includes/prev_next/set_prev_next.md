@@ -23,10 +23,14 @@
 {%- assign prev_site_order = site_order -%} 
 {%- assign prev_url = query_page.url | relative_url -%}
 {%- assign prev_name = query_page.title -%} 
+{%- if query_page.description -%}{%- assign prev_name = prev_name | append: ": " | append: query_page.description  -%} {%- endif -%} 
+
 {%- elsif site_order > page_site_order and site_order < next_site_order -%} 
 {%- assign next_site_order = site_order -%} 
 {%- assign next_url = query_page.url | relative_url -%} 
 {%- assign next_name = query_page.title -%} 
+
+{%- if query_page.description -%}{%- assign next_name = next_name | append: ": " | append: query_page.description  -%} {%- endif -%} 
 
 {%- endif -%} 
 {%- endfor -%}

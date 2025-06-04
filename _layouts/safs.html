@@ -52,7 +52,12 @@ assign first_level = nav_pages
                         nhsnotify-side-nav__item--current
                       {% endif %}
                     ">
-                  <a class="nhsnotify-side-nav__link" href="{{ site.baseurl | append: saf.url }}">{{ saf.title }}</a>
+
+                  {%- assign title = saf.title -%}
+                  {%- if saf.description -%}{%- assign title = title | append: ": " | append: saf.description  -%} {%- endif -%} 
+                  <a class="nhsnotify-side-nav__link" href="{{ site.baseurl | append: saf.url }}">{{ title }}</a>
+
+                  
                 </li>
                 {% endfor %}
                 {% endfor %}    

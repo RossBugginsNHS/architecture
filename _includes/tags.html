@@ -2,19 +2,26 @@
 {%- assign site_saf_dimensions = site.saf_dimensions -%} 
 {%- assign site_safs = site.safs -%} 
 
-{% assign site_pages = site_pages_only | concat: site_saf_dimensions | concat: site_safs %}
+{% assign site_pages_all = site_pages_only | concat: site_saf_dimensions | concat: site_safs %}
+{% assign site_pages = site_safs %}
+
+
 
 {% assign alldocs = site_pages %}	
 
 {% assign alltags =  alldocs | map: 'tags' | join: ',' | split: ',' | where_exp: "item", "item != ''" | group_by_exp: "item", "item" %}
 
+{% assign alltags =  alltags | sort_natural: "size" | reverse %}
+
 {%- for tag in alltags -%}
-<h3> {{tag.name}}: {{tag.size}}</h3>
+
+{%- assign tag_path = "tags/" | append: tag.name  -%} 
+<h3> <a href="{{tag_path | relative_url}}"> {{tag.name}}</a>: {{tag.size}}</h3>
 
 <ul>
 {%- for doc in site_pages -%}
 {%- if doc.tags contains tag.name -%}
-<li><a href="{{doc.url | relative_url}}">{{doc.title}}</a></li>
+<li><a href="{{doc.url | relative_url}}">{{doc.title}}{%- if doc.description -%}: {{doc.description}}{%- endif -%}</a></li>
 {%- endif -%}
 {%- endfor -%}
 </ul>
