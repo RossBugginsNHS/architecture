@@ -1,5 +1,7 @@
 ---
 layout: home
+nav_order: 4.9
+title: Contact
 ---
 
 <div id="heading" class="nhsnotify-banner--blue">

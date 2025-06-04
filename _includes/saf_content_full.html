@@ -1,0 +1,68 @@
+{% assign saf_to_render = include.saf %}
+
+{% if saf_to_render.requirement != null %}
+  <div>
+  <h2>Requirement</h2>
+  {{ saf_to_render.requirement | markdownify }}
+  </div>
+{% endif %}
+
+{% if saf_to_render.more_info != null %}
+  <div>
+  <h2>More information</h2>
+  {{ saf_to_render.more_info | markdownify }}
+  </div>
+{% endif %}
+
+{% if saf_to_render.examples != null %}
+  <div>
+  <h2>Examples</h2>
+  {% for example in saf_to_render.examples %}
+    <div>
+      <h3>{{ example.title }}</h3>
+      {{ example.content | markdownify }}
+    </div>
+  {% endfor %}
+  </div>
+{% endif %}
+
+{% if saf_to_render.technology != null %}
+  <div>
+  <h2>Technology</h2>
+  {% for technology in saf_to_render.technology %}
+    <div>
+      <h3>{{ technology.title }}</h3>
+      {{ technology.content | markdownify }}
+    </div>
+  {% endfor %}
+  </div>
+{% endif %}
+
+{% if saf_to_render.further_reading != null %}
+  <div>
+  <h2>Further Reading</h2>
+  {% for reading in saf_to_render.further_reading %}
+    <div>
+      <h3>
+        {% if reading.url %}
+          <a href="{{reading.url | relative_url}}">
+        {% endif %}
+            {{ reading.title }} 
+        {% if reading.url %}
+          </a>
+        {% endif %}
+        </h3>
+      {{ reading.content | markdownify }}
+    </div>
+  {% endfor %}
+  </div>
+{% endif %}
+
+{% assign content =  saf_to_render.content  %}
+{% assign requirement = saf_to_render.requirement | markdownify %}
+
+{% if content != requirement %}
+  <div>
+  {{ content }}
+  </div>
+{% endif %}

@@ -1,0 +1,2 @@
+{% assign saf_to_render = include.saf %}
+{{saf_to_render.requirement | default: saf_to_render.content  | markdownify | remove: '<p>' | remove: '</p>' }}

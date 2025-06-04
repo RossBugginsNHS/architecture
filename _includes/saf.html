@@ -1,3 +1,9 @@
 {% include construction.html %}
-<h1>{{ page.title }}:  <a href="{{ saf_dimension.url | relative_url  }}">{{ saf_dimension.title }}</a>  </h1>
-{{ content }}
+
+{%- if page.description -%}
+<h1>{{ page.title }}:  {{ page.description }}</a></h1>
+<p><a href="{{ saf_dimension.url | relative_url  }}">{{ saf_dimension.title }}</a></p>
+{%- else -%}
+<h1>{{ page.title }}: <a href="{{ saf_dimension.url | relative_url  }}">{{ saf_dimension.title }}</a>  </h1>
+{%- endif -%}
+{% include saf_content.html summary_only=false saf=page %}

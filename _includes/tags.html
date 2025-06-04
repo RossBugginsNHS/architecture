@@ -1,0 +1,22 @@
+{%- assign site_pages_only = site.pages -%} 
+{%- assign site_saf_dimensions = site.saf_dimensions -%} 
+{%- assign site_safs = site.safs -%} 
+
+{% assign site_pages = site_pages_only | concat: site_saf_dimensions | concat: site_safs %}
+
+{% assign alldocs = site_pages %}	
+
+{% assign alltags =  alldocs | map: 'tags' | join: ',' | split: ',' | where_exp: "item", "item != ''" | group_by_exp: "item", "item" %}
+
+{%- for tag in alltags -%}
+<h3> {{tag.name}}: {{tag.size}}</h3>
+
+<ul>
+{%- for doc in site_pages -%}
+{%- if doc.tags contains tag.name -%}
+<li><a href="{{doc.url | relative_url}}">{{doc.title}}</a></li>
+{%- endif -%}
+{%- endfor -%}
+</ul>
+{%- endfor -%}
+

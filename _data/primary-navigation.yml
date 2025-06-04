@@ -1,12 +1,14 @@
 - title: Home
   link: /
 
-
 - title: Guidance
   link: /guidance/
 
 - title: The Framework
   link: /safs/
+
+- title: Tags
+  link: /tags/
 
 - title: Dimensions
   link: /saf_dimensions/

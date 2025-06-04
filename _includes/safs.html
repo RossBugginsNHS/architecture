@@ -8,13 +8,14 @@
 {% continue %}
 {% endif %}
 <tr>
-  <td>
+  <td {%- if saf.requirement -%} {%- if saf.requirement contains '**MUST**' %} style="background-color: red;" {%- elsif saf.requirement contains '**SHOULD**' %} style="background-color: orange;" {%- else %} style="background-color: blue;" {%- endif -%}{%- endif -%}>
     <a href="{{ saf.url | relative_url }}">
       {{ saf.title }}
     </a>
   </td>
-  <td>
-    {{saf.content | markdownify | remove: '<p>' | remove: '</p>' }}
+  <td >
+
+    {% include saf_content.html summary_only=true saf=saf %}
   </td>
 </tr>
 {% endfor %}

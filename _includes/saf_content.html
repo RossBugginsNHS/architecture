@@ -1,0 +1,7 @@
+
+{% assign saf_to_render = include.saf %}
+{% if include.summary_only == true %}
+  {% include saf_content_summary.html saf=saf_to_render %}
+{% else %}
+  {% include saf_content_full.html saf=saf_to_render %}
+{% endif %}

@@ -12,7 +12,7 @@
     </a>
   </td>
   <td>
-    {{saf.content | markdownify | remove: '<p>' | remove: '</p>' }}
+    {{saf.requirement | default: saf.content  | markdownify | remove: '<p>' | remove: '</p>' }}
   </td>
 </tr>
 
