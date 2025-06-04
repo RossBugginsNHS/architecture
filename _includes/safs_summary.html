@@ -1,0 +1,24 @@
+{% for saf_dimension in site.saf_dimensions  %}
+<h3>  <a href="{{ saf_dimension.url | relative_url }}">{{saf_dimension.title}}</a></h3>
+
+
+<table>
+{% for saf in site.safs  %}
+{% if saf.dimension != saf_dimension.name %}
+{% continue %}
+{% endif %}
+<tr>
+  <td {%- if saf.requirement -%} {%- if saf.requirement contains '**MUST**' %} style="width:5%; background-color: red;" {%- elsif saf.requirement contains '**SHOULD**' %} style="width:5%;background-color: orange;" {%- else %} style="width:5%;background-color: blue;" {%- endif -%}{%- endif -%}>
+    <a href="{{ saf.url | relative_url }}">
+      {{ saf.title }}
+    </a>
+  </td>
+  <td style="padding-left: 2px;">
+
+    {% include saf_title.html saf=saf %}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endfor %}
