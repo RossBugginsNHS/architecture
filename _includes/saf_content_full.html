@@ -7,6 +7,12 @@
   </div>
 {% endif %}
 
+{% if content != requirement %}
+  <div>
+  {{ content }}
+  </div>
+{% endif %}
+
 {% if saf_to_render.more_info != null %}
   <div>
   <h2>More information</h2>
@@ -61,8 +67,3 @@
 {% assign content =  saf_to_render.content  %}
 {% assign requirement = saf_to_render.requirement | markdownify %}
 
-{% if content != requirement %}
-  <div>
-  {{ content }}
-  </div>
-{% endif %}

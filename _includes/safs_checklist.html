@@ -1,0 +1,39 @@
+{% for saf_dimension in site.saf_dimensions  %}
+<h3>  <a href="{{ saf_dimension.url | relative_url }}">{{saf_dimension.title}}</a></h3>
+
+
+<table>
+<tr>
+  <th>
+    Complete
+  </th>
+  <th>
+    Item
+  </th>
+  <th>
+    Description
+  </th>
+</tr>
+{% for saf in site.safs  %}
+{% if saf.dimension != saf_dimension.name %}
+{% continue %}
+{% endif %}
+<tr>
+    <td style="width:15%;">
+    <input type="checkbox">
+  </td>
+  <td style="width:15%;">
+    <a href="{{ saf.url | relative_url }}">
+      {{ saf.title }}
+    </a>
+  </td>
+  <td style="padding-left: 5px;">
+
+    {% include saf_content.html summary_only=true saf=saf %}
+  </td>
+
+</tr>
+{% endfor %}
+</table>
+
+{% endfor %}
