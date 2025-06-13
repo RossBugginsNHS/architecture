@@ -1,6 +1,42 @@
+<style>
+  .construction-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .construction-row {
+    width: 100%;
+  }
+  .construction-data {
+    border: 1px solid #ff0000;
+    padding: 8px;
+    width: 100%;
+    text-align:left
+  }
+</style>
 
-{% if page.published %}
+
+{% if page.complete %}
 {% else %}
+<table class="construction-table">
+<tr class="construction-row">
+<td class="construction-data">
 
-<p>👷🚧🏗️👷‍♂️👷‍♀️ This page is under construction.</p>
+
+<div>
+<p>👷🚧🏗️👷‍♂️👷‍♀️ <b>This page is under construction. </b> 👷🚧🏗️👷‍♂️👷‍♀️</p>
+
+{%- if page.todos -%}
+<p><b>Page Todo List</b></p>
+<ol>
+{%- for todo in page.todos  -%}
+<li>
+    {{todo}}
+</li>
+{% endfor %}
+<ol>
 {% endif %}
+</div>
+{% endif %}
+</td>
+</tr>
+</table>

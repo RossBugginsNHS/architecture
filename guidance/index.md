@@ -1,8 +1,7 @@
 ---
 title: SAF Introduction
 nav_order: 1.0
-published: true
-
+complete: true
 ---
 
 The NHS England Solution Architecture Framework (SAF) is intended to describe what good looks like when developing the architecture which delivers our products and services by defining: 
