@@ -8,6 +8,9 @@
     Complete
   </th>
   <th>
+    Score
+  </th>  
+  <th>
     Item
   </th>
   <th>
@@ -19,10 +22,20 @@
 {% continue %}
 {% endif %}
 <tr>
-    <td style="width:15%;">
+    <td style="width:5%;">
     <input type="checkbox">
   </td>
-  <td style="width:15%;">
+    <td style="width:15%;">
+    <select name="cars" id="cars">
+      <option value="0">0: No evidence</option>
+      <option value="1">1: Limited requirements met</option>
+      <option value="2">2: Some requirements met</option>
+      <option value="3">3: Much requirements met</option>
+      <option value="4">4: Most requirement met</option>
+      <option value="5">5: All requirement met</option>
+    </select>
+  </td>
+  <td style="width:5%;">
     <a href="{{ saf.url | relative_url }}">
       {{ saf.title }}
     </a>
