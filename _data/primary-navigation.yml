@@ -19,5 +19,8 @@
 - title: Dimensions
   link: /saf_dimensions/
 
+- title: API
+  link: /api/safs.json
+
 - title: Contact
   link: /contact
