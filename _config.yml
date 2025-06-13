@@ -32,8 +32,8 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 plugins_dir: _plugins
-#plugins:
-  #- tags
+plugins:
+  - jekyll-json-feed
 
 safe: false
 
