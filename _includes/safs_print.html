@@ -75,15 +75,22 @@
 
 <table>
 <tr>
-  <th style="width:5%;">
-    Complete
-  </th>  
-  <th style="width:5%;">
-    Score <br/> (0-5)
-  </th>    
-  <th style="width:5%;">
+    <th style="width:3%;">
     Item
   </th>
+    <th style="width:10%;">
+    Title
+  </th>  
+      <th style="width:20%;">
+    Notes
+  </th>  
+  <th style="width:3%;">
+    Complete ✅ / ❌
+  </th>  
+  <th style="width:3%;">
+    Score <br/> (0-5)
+  </th>    
+
   <th>
     Description
   </th>
@@ -93,18 +100,25 @@
 {% continue %}
 {% endif %}
 <tr>
-    <td style="width:5%;">
+    <td style="width:3%;">
+     <b>{{ saf.title }}</b> 
+  </td>
+    <td style="width:10%;">
+   {{ saf.description }}
+  </td>
+      <td style="width:20%;">
   
   </td>
-      <td style="width:5%;">
+    <td style="width:3%;">
   
   </td>
-  <td style="width:5%;">
-      {{ saf.title }}
+      <td style="width:3%;">
+  
   </td>
+
   <td>
 
-    {% include saf_content.html summary_only=true saf=saf %}
+   {{saf.requirement | default: saf.content  | markdownify | remove: '<p>' | remove: '</p>' }}
   </td>
 
 </tr>
