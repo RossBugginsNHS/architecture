@@ -22,8 +22,5 @@
 - title: API
   link: /api/safs.json
 
-- title: About
-  link: /about
-
-- title: Contact
-  link: /contact
+- title: Suggestions
+  link: /guidance/suggestions.html

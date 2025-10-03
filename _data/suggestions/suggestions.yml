@@ -1,0 +1,363 @@
+# Generated suggestions for SAF improvements (date: 2025-10-03)
+# Schema reference keys: id, category, referenced_saf_ids, suggested_change, rationale, impact, effort, priority, dependencies, notes, status
+suggestions:
+  - id: "SUG-001"
+    category: "duplication"
+    referenced_saf_ids: ["D03", "D06"]
+    suggested_change: "Clarify scope boundary between D03 (Freshness) and D06 (Coverage) to remove duplicated catalogue language."
+    rationale: "Both SAFs repeat artefact inventory concepts causing overlap and potential drift; D06 references itself in requirement text incorrectly."
+    impact: "Reduces reader confusion; enables single source of truth for required artefact list."
+    effort: "M"
+    priority: "P1"
+    dependencies: []
+    notes: "Keep artefact list & catalogue ownership in D06; keep process & metrics (last_verified etc.) in D03; cross-link explicitly."
+    status: "planned"
+
+  - id: "SUG-002"
+    category: "consistency"
+    referenced_saf_ids: ["D06"]
+    suggested_change: "Fix self-referential requirement in D06 to enumerate list via data include instead of repeating text 'as defined in D06'."
+    rationale: "Current phrasing is circular and unhelpful; referencing itself gives no actionable scope."
+    impact: "Clearer expectation; easier auditing."
+    effort: "S"
+    priority: "P2"
+    dependencies: ["SUG-001"]
+    notes: "Replace with 'as enumerated in documentation catalogue below'."
+    status: "planned"
+
+  - id: "SUG-003"
+    category: "taxonomy"
+    referenced_saf_ids: ["DM06", "DM07"]
+    suggested_change: "Rename DM07 description from 'Architectural Governance' to 'Architecture Decision Records' and adjust tags."
+    rationale: "DM06 already covers overarching governance; DM07 focuses on ADR practice but shares title causing ambiguity."
+    impact: "Improves navigability; avoids misclassification in indexes."
+    effort: "S"
+    priority: "P1"
+    dependencies: []
+    notes: "Update nav link text and ensure inbound links updated."
+    status: "planned"
+
+  - id: "SUG-004"
+    category: "metadata"
+    referenced_saf_ids: ["S01", "S02", "S03", "S04"]
+    suggested_change: "Standardise incomplete strategic SAFs by adding missing front matter fields: description, complete flag, todos removed or moved to backlog data file."
+    rationale: "Some strategic SAFs hold inline TODOs; inconsistent use of complete: false; reduces professionalism and complicates rendering."
+    impact: "Cleaner published site; enables programmatic completeness metrics."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Create _data/backlog/strategic_todos.yml and reference from guidance page instead of inline."
+    status: "planned"
+
+  - id: "SUG-005"
+    category: "content-gap"
+    referenced_saf_ids: ["SD04"]
+    suggested_change: "Expand 'design_principles' list to include observability, security by design, performance efficiency, sustainability and testability or explain omission."
+    rationale: "Current list references 'Etc.' which is vague; readers cannot rely on unspecified principles."
+    impact: "Completeness; better alignment with other SAF pillars (e.g. NF01, NF04)."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Either enumerate explicitly or link to master principle catalogue."
+    status: "planned"
+
+  - id: "SUG-006"
+    category: "consistency"
+    referenced_saf_ids: ["NF02", "NF06"]
+    suggested_change: "Harmonise RTO/RPO & resilience language (NF02 vs NF06) with shared glossary include."
+    rationale: "Overlapping definitions of resilience and DR terms risk divergence; central glossary improves alignment."
+    impact: "Reduced interpretive errors; easier audit."
+    effort: "M"
+    priority: "P2"
+    dependencies: []
+    notes: "Add _includes/glossary_resilience.md and reference in both."
+    status: "planned"
+
+  - id: "SUG-007"
+    category: "duplication"
+    referenced_saf_ids: ["SD06", "SD09", "SD10"]
+    suggested_change: "Consolidate repeated API versioning & deprecation content into SD10, keep standards mapping in SD09, lifecycle methodology in SD06."
+    rationale: "Versioning & deprecation appear in SD06 (API First) and SD09 (API Standards) and SD10 (API Lifecycle); centralising reduces redundancy."
+    impact: "Easier maintenance; clearer responsibility boundaries."
+    effort: "M"
+    priority: "P1"
+    dependencies: []
+    notes: "Insert cross-links with anchors instead of duplicate bullet lists."
+    status: "planned"
+
+  - id: "SUG-008"
+    category: "governance"
+    referenced_saf_ids: ["DM05", "DM06", "DM04"]
+    suggested_change: "Create a governance overview diagram linking stakeholder involvement, design authorities, and governance tailoring matrices."
+    rationale: "Related SAFs describe pieces of governance without a unifying visual; readers cannot easily see flow."
+    impact: "Improved comprehension and onboarding; highlights responsibility splits."
+    effort: "M"
+    priority: "P3"
+    dependencies: []
+    notes: "Use PlantUML or Mermaid for diffable governance_flow.puml."
+    status: "planned"
+
+  - id: "SUG-009"
+    category: "automation"
+    referenced_saf_ids: ["D03", "D04", "D05", "D06"]
+    suggested_change: "Introduce a shared metadata schema (YAML) referenced by documentation-related SAFs for owner_role, last_verified, classification, status."
+    rationale: "Multiple docs SAFs mention metadata; a formal schema file enables linters and reduces inconsistent field names."
+    impact: "Enables automated validation and reporting."
+    effort: "M"
+    priority: "P1"
+    dependencies: ["SUG-001"]
+    notes: "Add /schema/documentation_metadata.schema.yml and reference in each SAF."
+    status: "planned"
+
+  - id: "SUG-010"
+    category: "clarity"
+    referenced_saf_ids: ["D02"]
+    suggested_change: "Add explicit sensitivity classification levels & examples table (Public, Internal, Restricted) as structured data."
+    rationale: "Currently classification levels implied but not enumerated formally; hampers automation."
+    impact: "Facilitates policy enforcement and metrics (restricted %)."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Provide YAML block enabling site badge generation."
+    status: "planned"
+
+  - id: "SUG-011"
+    category: "content-gap"
+    referenced_saf_ids: ["DM08"]
+    suggested_change: "Include bias mitigation guidance in structured decision making (e.g., pre-mortem, red team review)."
+    rationale: "Addresses risk of criteria retrofitting & confirmation bias not currently mitigated directly."
+    impact: "Higher decision quality; reduced cognitive bias."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Add subsection 'Bias Countermeasures' after Pitfalls."
+    status: "planned"
+
+  - id: "SUG-012"
+    category: "consistency"
+    referenced_saf_ids: ["NF01", "NF03"]
+    suggested_change: "Align performance metrics naming (p95 latency vs latency p95) and define standard SLO field names."
+    rationale: "Inconsistent metric nomenclature complicates dashboards & scripts."
+    impact: "Easier automated aggregation."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Add metrics_naming.md include."
+    status: "planned"
+
+  - id: "SUG-013"
+    category: "taxonomy"
+    referenced_saf_ids: ["RU01", "RU02", "RU03", "SD05"]
+    suggested_change: "Create a unified reuse capability model reference and remove overlapping reuse heuristics repeated across these SAFs."
+    rationale: "Reuse guidance scattered causing partial duplication and risk of contradiction."
+    impact: "Simplified navigation & consistent reuse messaging."
+    effort: "M"
+    priority: "P2"
+    dependencies: []
+    notes: "New file _includes/reuse_overview.md, link from each."
+    status: "planned"
+
+  - id: "SUG-014"
+    category: "content-gap"
+    referenced_saf_ids: ["NF04"]
+    suggested_change: "Add trade-off section explicitly balancing carbon vs latency/cost with decision template snippet."
+    rationale: "Pitfalls mention trade-offs but no actionable template to document them."
+    impact: "Better quality sustainability decisions; auditable rationale."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Provide ADR snippet example."
+    status: "planned"
+
+  - id: "SUG-015"
+    category: "automation"
+    referenced_saf_ids: ["DM07"]
+    suggested_change: "Add recommendation for ADR lint rule enforcing Alternatives & Consequences sections non-empty."
+    rationale: "Addresses noted pitfall of missing alternatives; currently mentioned only as quick improvement."
+    impact: "Improved ADR completeness & future traceability."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Provide sample regex or script pointer."
+    status: "planned"
+
+  - id: "SUG-016"
+    category: "metadata"
+    referenced_saf_ids: ["SD01"]
+    suggested_change: "Convert methodology activities into a checklist YAML for automated freshness / coverage scoring."
+    rationale: "Assessment references checks but not machine-readable; enables scoring automation."
+    impact: "Objective maturity tracking."
+    effort: "M"
+    priority: "P3"
+    dependencies: []
+    notes: "Add _data/methodology/checklist.yml."
+    status: "planned"
+
+  - id: "SUG-017"
+    category: "clarity"
+    referenced_saf_ids: ["SD11"]
+    suggested_change: "Correct typo extenal_policies -> external_policies and convert policy list into objects with id, title, link."
+    rationale: "Typo complicates templating; richer objects allow rendering improvements."
+    impact: "Clean data & consistent loops."
+    effort: "S"
+    priority: "P1"
+    dependencies: []
+    notes: "Update layout loop accordingly."
+    status: "planned"
+
+  - id: "SUG-018"
+    category: "consistency"
+    referenced_saf_ids: ["NF05"]
+    suggested_change: "Move inline auditing URLs into structured link objects (title, url) to match further_reading format."
+    rationale: "Mixed formats reduce rendering consistency."
+    impact: "Uniform styling; easier iteration."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Provide migration script snippet."
+    status: "planned"
+
+  - id: "SUG-019"
+    category: "duplication"
+    referenced_saf_ids: ["SD05", "T04"]
+    suggested_change: "Deduplicate SaaS vs Reuse evaluation criteria; cross-link and centralise cost model guidance."
+    rationale: "Both SAFs repeat TCO & fit-gap evaluation guidance."
+    impact: "Reduced maintenance overhead."
+    effort: "M"
+    priority: "P2"
+    dependencies: []
+    notes: "Keep generic commodity vs build model in SD05; link from T04."
+    status: "planned"
+
+  - id: "SUG-020"
+    category: "governance"
+    referenced_saf_ids: ["DM02", "T04", "SD05"]
+    suggested_change: "Introduce unified cost & value evidence template (capex/opex/run/change/exit + carbon metric) referenced by spend control, reuse & SaaS first SAFs."
+    rationale: "Currently separate descriptions risk inconsistent modelling; single template fosters comparability."
+    impact: "Better investment decisions & audit trail."
+    effort: "M"
+    priority: "P1"
+    dependencies: []
+    notes: "Add templates/cost_value_template.md."
+    status: "planned"
+
+  - id: "SUG-021"
+    category: "automation"
+    referenced_saf_ids: ["D02", "D03", "D04", "DM07", "SD06"]
+    suggested_change: "Propose site-wide CI script bundle (classification check, freshness, ADR lint, API contract diff) referenced centrally instead of repeating in each SAF."
+    rationale: "Multiple SAFs mention automation opportunities separately; consolidated script docs reduce duplication."
+    impact: "Encourages adoption via single integration guide."
+    effort: "L"
+    priority: "P2"
+    dependencies: ["SUG-009", "SUG-015"]
+    notes: "Create docs/automation/README.md summarising scripts."
+    status: "planned"
+
+  - id: "SUG-022"
+    category: "content-gap"
+    referenced_saf_ids: ["T01"]
+    suggested_change: "Add explicit ring movement SLA & evaluation exit criteria section."
+    rationale: "Radar usage references success criteria but lacks target time windows."
+    impact: "Avoids lingering technologies & unmanaged trial sprawl."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Define e.g. Trial window 90 days unless extended with review."
+    status: "planned"
+
+  - id: "SUG-023"
+    category: "clarity"
+    referenced_saf_ids: ["SD08"]
+    suggested_change: "Add section differentiating pattern vs implementation detail (avoid pattern overload)."
+    rationale: "Pitfalls mention enthusiasm but no guidance to classify borderline cases."
+    impact: "Prevents misuse of pattern term, clearer evaluation."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Provide decision tree snippet."
+    status: "planned"
+
+  - id: "SUG-024"
+    category: "taxonomy"
+    referenced_saf_ids: ["All"]
+    suggested_change: "Introduce consistent maturity scale formatting (avoid quotes around numeric threshold statements) and unify quotes style."
+    rationale: "Some SAFs place maturity examples in quotes with > or inconsistent punctuation; inconsistent rendering."
+    impact: "Professional polish; easier parsing."
+    effort: "L"
+    priority: "P3"
+    dependencies: []
+    notes: "Run regex to normalise examples blocks."
+    status: "planned"
+
+  - id: "SUG-025"
+    category: "metadata"
+    referenced_saf_ids: ["All"]
+    suggested_change: "Add optional front matter field maturity_model_version to each SAF."
+    rationale: "Enables tracking when maturity definitions evolve; currently implicitly versionless."
+    impact: "Supports change impact analysis & historical scoring reproducibility."
+    effort: "M"
+    priority: "P2"
+    dependencies: []
+    notes: "Initialise to 1.0 across files; bump when structure changes."
+    status: "planned"
+
+  - id: "SUG-026"
+    category: "content-gap"
+    referenced_saf_ids: ["NF07"]
+    suggested_change: "Add explicit legislative references (Equality Act 2010, Public Sector Bodies Accessibility Regulations 2018) with links."
+    rationale: "Currently references WCAG but omits governing legislation for UK public sector."
+    impact: "Strengthens compliance clarity."
+    effort: "S"
+    priority: "P2"
+    dependencies: []
+    notes: "Add to further_reading block."
+    status: "planned"
+
+  - id: "SUG-027"
+    category: "duplication"
+    referenced_saf_ids: ["SD01", "SD04"]
+    suggested_change: "Merge overlapping guidance on domain boundaries vs cohesion into single cross-link rather than repeating definitions."
+    rationale: "Both SAFs reference cohesion / domain boundaries, causing partial duplication."
+    impact: "Reduced redundancy."
+    effort: "M"
+    priority: "P3"
+    dependencies: []
+    notes: "Insert See also: SD04 in SD01."
+    status: "planned"
+
+  - id: "SUG-028"
+    category: "clarity"
+    referenced_saf_ids: ["D05"]
+    suggested_change: "Provide explicit acceptance criteria for 'layer alignment' (e.g., allowed Archimate relationship patterns) or link to linter rules."
+    rationale: "Currently qualitative; tooling guidance would enable automation."
+    impact: "Improves consistency and validation potential."
+    effort: "M"
+    priority: "P2"
+    dependencies: []
+    notes: "Add table of allowed relationship pairs."
+    status: "planned"
+
+  - id: "SUG-029"
+    category: "automation"
+    referenced_saf_ids: ["DM03"]
+    suggested_change: "Add risk statement pattern regex (Cause -> Event -> Impact) and linter guidance."
+    rationale: "Assessment expects pattern but no formal regex example provided."
+    impact: "Enforceable quality checks."
+    effort: "S"
+    priority: "P3"
+    dependencies: []
+    notes: "Example regex: ^If .+ then .+ will .+\\.$"
+    status: "planned"
+
+  - id: "SUG-030"
+    category: "governance"
+    referenced_saf_ids: ["DM02", "DM08"]
+    suggested_change: "Add cost vs decision evaluation linkage (ensure decision matrices include cost dimension weight referencing spend control model)."
+    rationale: "Spend control and structured decision making mention cost separately; unify to avoid omission."
+    impact: "More comprehensive decisions; easier audit."
+    effort: "S"
+    priority: "P2"
+    dependencies: ["SUG-020"]
+    notes: "Introduce standard criterion label Cost_Total_Lifecycle."
+    status: "planned"
+
