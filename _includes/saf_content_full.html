@@ -38,7 +38,17 @@
         {% assign example = saf_to_render.assessment_examples[score] %}
         {% if example %}
           <dt><h3>{{ score }} – {{ score_labels[forloop.index0] }}</h3></dt>
-          <dd>{{ example | markdownify }}</dd>
+          <dd>
+            {% if example.first and example.first.example %}
+              <ul>
+                {% for item in example %}
+                  <li>{{ item.example | markdownify | strip }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              {{ example | markdownify }}
+            {% endif %}
+          </dd>
         {% endif %}
       {% endfor %}
     </dl>
