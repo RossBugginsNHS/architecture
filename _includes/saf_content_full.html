@@ -20,6 +20,43 @@
   </div>
 {% endif %}
 
+{% if saf_to_render.assessment_guidance != null %}
+  <div>
+  <h2>Assessment Guidance</h2>
+  {{ saf_to_render.assessment_guidance | markdownify }}
+  </div>
+{% endif %}
+
+
+{% if saf_to_render.assessment_examples != null %}
+  <div>
+    <h2>Assessment Examples (Scoring 0–5)</h2>
+    {% assign scores = "0,1,2,3,4,5" | split: "," %}
+    {% assign score_labels = "No evidence|Limited requirements met|Some requirements met|Much requirements met|Most requirement met|All requirement met" | split: "|" %}
+    <dl class="assessment-examples">
+      {% for score in scores %}
+        {% assign example = saf_to_render.assessment_examples[score] %}
+        {% if example %}
+          <dt><h3>{{ score }} – {{ score_labels[forloop.index0] }}</h3></dt>
+          <dd>
+            {% if example.first and example.first.example %}
+              <ul>
+                {% for item in example %}
+                  <li>{{ item.example | markdownify | strip }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              {{ example | markdownify }}
+            {% endif %}
+          </dd>
+        {% endif %}
+      {% endfor %}
+    </dl>
+  </div>
+{% endif %}
+
+
+
 {% if saf_to_render.examples != null %}
   <div>
   <h2>Examples</h2>

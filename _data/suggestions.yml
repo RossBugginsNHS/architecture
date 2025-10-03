@@ -1,0 +1,14 @@
+# Flattened suggestions data for simpler Liquid access
+suggestions:
+  - id: "SUG-001"
+    category: "duplication"
+    referenced_saf_ids: ["D03", "D06"]
+    suggested_change: "Clarify scope boundary between D03 (Freshness) and D06 (Coverage) to remove duplicated catalogue language."
+    rationale: "Both SAFs repeat artefact inventory concepts causing overlap and potential drift; D06 references itself in requirement text incorrectly."
+    impact: "Reduces reader confusion; enables single source of truth for required artefact list."
+    effort: "M"
+    priority: "P1"
+    dependencies: []
+    notes: "Keep artefact list & catalogue ownership in D06; keep process & metrics (last_verified etc.) in D03; cross-link explicitly."
+    status: "planned"
+  # truncated; refer to original file _data/suggestions/suggestions.yml for full list

@@ -17,4 +17,5 @@ s serve:
 	bundle exec jekyll serve --trace --livereload	
 
 build:
+	ruby scripts/enforce_modal_verbs.rb
 	npm run build	
