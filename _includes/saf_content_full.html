@@ -1,11 +1,25 @@
 {% assign saf_to_render = include.saf %}
 
+
+{% if saf_to_render.tags != null %}
+<div class="tag-list-inline saf-tags-inline">
+  <span class="taghead">Tags:</span>
+ {% for tag in saf_to_render.tags %}
+  {% assign tag_url = "tags/" | append: tag %}
+  <span class="tag"><a href="{{ tag_url | relative_url }}">{{ tag }}</a></span>
+ {% endfor %}
+</div>
+{% endif %}
+
+
 {% if saf_to_render.requirement != null %}
   <div>
   <h2>Requirement</h2>
   {{ saf_to_render.requirement | markdownify }}
   </div>
 {% endif %}
+
+
 
 {% if content != requirement %}
   <div>

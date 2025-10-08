@@ -254,9 +254,13 @@
   }
 }
 
+
+
 .nhsuk-breadcrumb__item {
 
   &:not(:last-child)::after {
+
+
     background: url({{/assets/images/icon-chevron-right__breadcrumb.svg|relative_url}}) top left no-repeat;
   }
 }
@@ -265,5 +269,26 @@
 
   &::before {
     background: url({{/assets/images/icon-chevron-left__back_link.svg|relative_url}}) top left no-repeat;
+  }
+}
+
+
+// SAF specific tag styling reuse
+.saf-tags-inline {
+  font-style: italic;
+  color: red;
+  padding-bottom: 20px;
+
+  .taghead{
+    font-weight: bold;
+    display: inline-block; 
+  }
+
+  .tag { 
+    display: inline-block; 
+    margin-right: 0.4rem; 
+    white-space: nowrap; 
+    font-style: inherit;
+   
   }
 }
