@@ -1,0 +1,212 @@
+---
+safs:
+- code: D01
+  requirement: All architecture documentation should be maintained (with supporting
+    processes and change control) within the appropriate NHS England knowledge store(s)
+    e.g. Aalto, SharePoint, Confluence.
+- code: D02
+  requirement: Documentation should be published "open by default" and exceptions
+    handled according to policy i.e. sensitivity etc.
+- code: D03
+  requirement: |-
+    The architecture documentation should be appropriate in scope and quality for the solution covering (but not exclusively):
+
+    - Architecture Vision
+    - Architecture Roadmap
+    - Layer Diagrams
+    - Capability Model and Solution Mapping
+    - Non functional requirements
+    - Conceptual Architecture
+    - Logical Architecture
+    - Physical (including network, infrastructure etc.)
+    - Solution Architecture Overview (SDO)
+    - Key Architecture Decisions (KADs)
+    - Data Models
+    - Data Flows
+    - API Specifications
+    - Volume and Performance Models
+    - Architecture Decision Records
+    - Assumption, Risks, Issues and Dependencies
+    - Cyber Assessment Framework compliance
+- code: DM01
+  requirement: |-
+    Where a solution or part of solution is seen as tactical, short term or introduces / persists tech & architecture debt, remediation plans should be in place and agreed with the relevant stakeholders and governance groups.
+
+    Architecture Debt should be identified with implications, rationale and future mitigation plans (recorded in an Architecture Debt Register)
+
+    Plans should be realistic and funded.
+- code: DM02
+  requirement: Spend control (GaTS) and associated Government Digital Services & Service
+    Design related guidance should be followed whilst developing the solution and
+    be evidenced for service design & spend control reviews.
+- code: DM03
+  requirement: Architecture risks and issues should be managed effectively with the
+    appropriate level of visibility and ownership.
+- code: DM04
+  requirement: There should be effective and commensurate stakeholder involvement
+    with respect to solution design and architecture decisions.
+- code: DM05
+  requirement: |-
+    The solution design and architecture decisions should be managed through a tiered governance process, ultimately leading, if appropriate, to TRG.
+
+    The decision process:
+
+    Decisions should be made at the lowest possible level, with the appropriate stakeholders involved. Considerations include:
+
+    - All decisions should follow local governance processes, such as a programme design authority.
+    - If the solution requires assessment against Principles, Policies, Patterns and Standards then presentation to PDG or TRG would be appropriate.
+    - At the appropriate stages of the lifecycle, all large items must go to TRG.
+    - The relevant Lead Architects and Subject Matter Experts [(SMEs)](https://architecture.digital.nhs.uk/trg/role-of-ccc) should be engaged and supportive.
+- code: DM06
+  requirement: The overall approach to architecture governance should be appropriate
+    and commensurate with the nature of the solution.
+- code: DM07
+  requirement: |-
+    All Architecture decisions should be documented with a lightweight Architecture Decision Record with options and clear rationale.
+
+    E.g. [SEQF Any Decision Record Template (GitHub)](https://github.com/NHSDigital/software-engineering-quality-framework/blob/main/any-decision-record-template.md)
+- code: DM08
+  requirement: All decision-making should be structured. E.g. identify key strategic
+    drivers, user need assess options against drivers, present rationale, clarity
+    on trade-offs, dependencies, risks and issues understood.
+- code: NF01
+  requirement: Solutions should incorporate workload observability and understand
+    service health.
+- code: NF02
+  requirement: Reliability & Resilience needs should be defined (in terms of standard
+    NHS England service levels) and solution mechanisms to meet these needs are defined
+    including metrics such as Recovery Time Objective (RTO) and Recovery Point Objective
+    (RPO).
+- code: NF03
+  requirement: An overall volume and performance model should exist and includes business-realistic
+    exceptional scenarios.
+- code: NF04
+  requirement: Methods to measure sustainability to establish baseline and show improvement
+    should be defined.
+- code: NF05
+  requirement: |-
+    Audit & logging requirements should be defined, and the solution can support them.
+
+    [NCSC Logging and Protective Monitoring](https://www.ncsc.gov.uk/collection/device-security-guidance/managing-deployed-devices/logging-and-protective-monitoring)
+
+    [NCSC Principle 13: Audit information and alerting for customers](https://www.ncsc.gov.uk/collection/cloud/the-cloud-security-principles/principle-13-audit-information-and-alerting-for-customers)
+- code: NF06
+  requirement: |-
+    **Disaster Recovery & Business Continuity**
+
+    There should be clear requirements (commensurate with service levels) around DR & BC (and a pragmatic approach taken with regards DR/BC events planned for).
+
+    Continuity plans and supporting documentation should reflect the requirements, technical & architecture constraints etc.
+- code: RU01
+  requirement: If reusing existing capabilities, we should have confidence that any
+    additional functionality required can be sensibly and cost effectively added to
+    the existing service i.e. we are not bending something out of shape.
+- code: RU02
+  requirement: For new capabilities we should identify/recognise the potential reuse
+    opportunities which may drive design decisions, benefits etc.
+- code: RU03
+  requirement: |
+    We should reuse capabilities as defined below.
+
+    **Capabilities:**
+
+    | Capability | Reuse |
+    |------------|-------|
+    | Cohorting | CaaS |
+    | Citizen Messaging | NHS Notify |
+    | Staff Messaging | GOV.Notify and NHS.net Connect |
+    | Application Messaging | MESH or alternative as required |
+    | Demographics/MPI | PDS |
+    | Eventing | MNS |
+    | API Management | NHSE API Management Platform (which uses Apigee underneath) |
+    | Identity | CIS2 Auth/NHS Mail SSO/NHS login |
+    | Logging & Monitoring | Splunk/Sentinel/Cribl/Grafana (tbc &ndash; pending ODIN) |
+    | Data Analytics | FDP/CDP/DPS - FDP First |
+    | Public facing web presence | NHS.uk |
+    | Patient Flags | Flags service |
+    | Organisational Data | ODS |
+
+    **Shared Services:**
+
+    | Capability | Reuse |
+    |------------|-------|
+    | Auditing | Standard Audit tools/PARS (when live) |
+    | Cyber Security Monitoring | CSOC |
+    | Service Management & Support | ServiceNow |
+- code: S01
+  requirement: The solution should be aligned to stated strategy approved at an executive
+    level. e.g. TD Design Authority, P&P DA etc.
+- code: S02
+  requirement: We should be able to demonstrate which capabilities from the NHSE Business
+    Capability Model the solution is realising, and any potential duplication identified.
+- code: S03
+  requirement: A well-formed and maintained product vision and roadmap should exist
+    with appropriate detail around architecture elements.
+- code: S04
+  requirement: The solution design should be able to meet the stated user needs and
+    overall business objectives/drivers.
+- code: SD01
+  requirement: An appropriate design methodology should be followed e.g. Domain Driven
+    Design and should include NHS/CDDO Service Design and Secure by Design principles
+    and methods.
+- code: SD02
+  requirement: The solution should be compliant with NHS England principles, policy,
+    patterns and best practice.
+- code: SD03
+  requirement: The solution should be compliant with relevant standards.
+- code: SD04
+  requirement: |-
+    Solution design should follow good practice design principles. E.g.
+
+    - Separation of concerns
+    - Encapsulation / Modularisation
+    - Loose coupling
+    - High cohesion / single responsibility
+    - Design for flexibility/change
+- code: SD05
+  requirement: Solutions should focus on commodity products and services where possible/sensible.
+- code: SD06
+  requirement: An API First design methodology should be followed, where APIs are
+    at the forefront of the design process, functionality and data is exposed via
+    APIs and the needs of the API consumer have been considered.
+- code: SD07
+  requirement: We should treat internal (NHS England) and external consumers equally.
+- code: SD08
+  requirement: We should select the correct patterns for the use case, and any trade-offs
+    justified and agreed.
+- code: SD09
+  requirement: We should adopt the right standards for API development, supported
+    by user, consumer, and market / supplier engagement.
+- code: SD10
+  requirement: The API follows the lifecycle policy best practice as set out within
+    [Sunsetting (deprecation and retirement) policy (Confluence)](https://nhsd-confluence.digital.nhs.uk/display/APM/Sunsetting+%28deprecation+and+retirement%29+phases).
+    This should include any enforcement arrangements.
+- code: SD11
+  requirement: |-
+    Solutions should adhere to:
+
+    - [Government "Secure by Design" policy](https://www.security.gov.uk/guidance/secure-by-design/)
+    - [NCSC CAF](https://www.ncsc.gov.uk/collection/cyber-assessment-framework)
+    - [Access Control Guidelines](https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-b/principle-b2-identity-and-access-control)
+    - [Policy - Strong Auth/MFA](https://www.ncsc.gov.uk/guidance/authentication-methods-choosing-the-right-type)
+    - [Storage and Processing of Data Outside of the UK - Information Governance Policy](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/guidance)
+    - NHS England's API strategy and policy statements. E.g. [API Landscape policy document (Word, Aalto.digital.nhs.uk)](https://aalto.digital.nhs.uk/#/document/viewer/b61e0f92-b168-4173-8344-353360f4250e?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+
+    (Note there are overlaps with the Engineering red lines; ensure a consistent response and do not repeat assessments)
+- code: SD12
+  requirement: |-
+    The relevant cloud "Well Architected Framework" should be followed, and the solutions assessed against it.
+
+    [AWS](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) | [Azure](https://learn.microsoft.com/en-us/azure/well-architected/)
+    (Note there are overlaps with the Engineering Software Quality Framework; ensure a consistent response and do not repeat assessments)
+- code: T01
+  requirement: |-
+    Technology choices should be made in line with the [NHS England Technology Radar](https://radar.engineering.england.nhs.uk/), corporate direction and wider industry trends using the associated processes to support decision making.
+
+    (Note there are overlaps with the Engineering red lines; ensure a consistent response and do not repeat assessments)
+- code: T02
+  requirement: Technology choices should be appropriate to the problem and non-functional
+    needs. I.e. we are as equally aware of over-engineering as we are of under-engineering.
+- code: T03
+  requirement: An appraisal should be made of any vendor lock considerations and associated
+    risks, and these are understood and accepted/mitigated.

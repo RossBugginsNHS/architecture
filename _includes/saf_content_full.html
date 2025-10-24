@@ -11,6 +11,11 @@
 </div>
 {% endif %}
 
+{% if saf_to_render.deprecated == true %}
+  <div>
+    <h2>THIS SAF IS DEPRECATED</h2>
+  </div>
+{% endif %}
 
 {% if saf_to_render.requirement != null %}
   <div>
@@ -19,6 +24,14 @@
   </div>
 {% endif %}
 
+{% assign master_stripped = saf_to_render.requirement_master | strip %}
+{% assign requirement_stripped = saf_to_render.requirement | strip %}
+{% if saf_to_render.requirement_master != null and master_stripped != requirement_stripped %}
+  <div>
+  <h2>Master Requirement (from NHSE SAF)</h2>
+  {{ saf_to_render.requirement_master | markdownify }}
+  </div>
+{% endif %}
 
 
 {% if content != requirement %}
